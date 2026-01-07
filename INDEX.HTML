@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="board">
+        <div class="column">
+            <h3><i class="fas fa-circle start"></i> To Do</h3>
+            <div class="task-list" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="task" draggable="true" ondragstart="drag(event)" id="task1">
+                    <div class="tag design">Design</div>
+                    <p>Create UI Mockups</p>
+                </div>
+                <div class="task" draggable="true" ondragstart="drag(event)" id="task2">
+                    <div class="tag dev">Dev</div>
+                    <p>Setup React Repo</p>
+                </div>
+            </div>
+            <div class="add-task-btn" onclick="addTask('todo')">+ Add Item</div>
+        </div>
+
+        <div class="column">
+            <h3><i class="fas fa-circle progress"></i> In Progress</h3>
+            <div class="task-list" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="task" draggable="true" ondragstart="drag(event)" id="task3">
+                    <div class="tag dev">Dev</div>
+                    <p>Build API endpoints</p>
+                </div>
+            </div>
+            <div class="add-task-btn" onclick="addTask('inprogress')">+ Add Item</div>
+        </div>
+
+        <div class="column">
+            <h3><i class="fas fa-check-circle done"></i> Done</h3>
+            <div class="task-list" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="task" draggable="true" ondragstart="drag(event)" id="task4">
+                    <div class="tag design">Design</div>
+                    <p>Design Logo</p>
+                </div>
+            </div>
+            <div class="add-task-btn" onclick="addTask('done')">+ Add Item</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
